@@ -7,13 +7,19 @@ export function mapNote(document: HydratedDocument<NoteDocument>): Note {
     id: document._id.toString(),
     title: document.title,
     body: document.body,
-    visibility: document.visibility,
+    // TODO: Chapter 3 Lesson 2 - verify mapped fields match the shared Note contract.
+    visibility: String(document.visibility),
     ownerId: document.ownerId.toString(),
     tags: document.tags,
-    comments: document.comments,
+    comments: document.comments.map((comment) => ({
+      ...comment,
+      // TODO: Chapter 3 Lesson 6 - map nested values to the shared type, not persistence quirks.
+      resolved: Boolean(comment.resolved)
+    })),
     archived: document.archived,
-    pinned: document.pinned,
-    createdAt: document.createdAt.toISOString(),
+    pinned: Boolean(document.pinned),
+    // TODO: Chapter 3 Lesson 5 - expose dates in the shared API format intentionally.
+    createdAt: String(document.createdAt),
     updatedAt: document.updatedAt.toISOString()
   };
 }

@@ -33,6 +33,11 @@ const commentSchema = new Schema<NoteComment>(
     createdAt: {
       type: String,
       required: true
+    },
+    resolved: {
+      // TODO: Chapter 3 Lesson 6 - align this nested schema field with the shared comment type.
+      type: String,
+      default: "false"
     }
   },
   {
@@ -55,7 +60,7 @@ const noteSchema = new Schema<NoteDocument>(
     },
     visibility: {
       type: String,
-      enum: NOTE_VISIBILITIES,
+      // TODO: Chapter 3 Lesson 4 - align the schema enum with shared constrained values.
       default: "team",
       required: true
     },
@@ -77,8 +82,9 @@ const noteSchema = new Schema<NoteDocument>(
       default: false
     },
     pinned: {
-      type: Boolean,
-      default: false
+      // TODO: Chapter 3 Lesson 8 - keep this feature field compatible with existing records.
+      type: String,
+      default: "false"
     }
   },
   {

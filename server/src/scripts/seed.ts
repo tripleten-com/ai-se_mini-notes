@@ -27,7 +27,9 @@ async function seed() {
           id: "comment-1",
           body: "Check mapper output before changing the UI.",
           authorId: user._id.toString(),
-          createdAt: new Date().toISOString()
+          createdAt: new Date().toISOString(),
+          // TODO: Chapter 3 Lesson 1 - trace this seeded nested field into the shared model.
+          resolved: false
         }
       ],
       archived: false,

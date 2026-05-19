@@ -12,18 +12,22 @@ export type NoteComment = {
   id: string;
   body: string;
   authorId: string;
+  // TODO: Chapter 3 Lesson 6 - extend this nested object safely without changing unrelated fields.
   createdAt: string;
+  resolved?: boolean;
 };
 
 export type Note = {
   id: string;
   title: string;
   body: string;
-  visibility: NoteVisibility;
+  // TODO: Chapter 3 Lesson 4 - constrain visibility to the shared NoteVisibility union.
+  visibility: string;
   ownerId: string;
   tags: string[];
   comments: NoteComment[];
   archived: boolean;
+  // TODO: Chapter 3 Lesson 8 - decide whether pinned belongs in the model and keep it compatible.
   pinned?: boolean;
   createdAt: string;
   updatedAt: string;

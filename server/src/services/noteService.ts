@@ -17,6 +17,7 @@ export async function listNotes(): Promise<Paginated<Note>> {
 }
 
 export async function createNote(payload: CreateNotePayload): Promise<Note> {
+  // TODO: Chapter 3 Lesson 7 - keep backend validation at the service/model boundary.
   if (payload.title.trim().length < 3) {
     throw new Error("Title must be at least 3 characters.");
   }
