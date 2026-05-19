@@ -20,9 +20,8 @@ function NoteForm({ onSubmit }: NoteFormProps) {
   const [form, setForm] = useState<NoteFormState>(initialFormState);
   const [error, setError] = useState<string | null>(null);
 
-  function handleTextChange(
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) {
+  // TODO: Chapter 2 Lesson 3 - replace broad event typing with the correct React event type.
+  function handleTextChange(event: any) {
     const { name, value } = event.target;
 
     setForm((current) => ({
@@ -31,10 +30,11 @@ function NoteForm({ onSubmit }: NoteFormProps) {
     }));
   }
 
-  function handleTagsChange(event: ChangeEvent<HTMLInputElement>) {
+  // TODO: Chapter 2 Lesson 3 - type this input event without using any.
+  function handleTagsChange(event: any) {
     const tags = event.target.value
       .split(",")
-      .map((tag) => tag.trim())
+      .map((tag: string) => tag.trim())
       .filter(Boolean);
 
     setForm((current) => ({
@@ -50,7 +50,8 @@ function NoteForm({ onSubmit }: NoteFormProps) {
     }));
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  // TODO: Chapter 2 Lesson 3 - type this form event without using any.
+  async function handleSubmit(event: any) {
     event.preventDefault();
 
     if (form.title.trim().length < 3) {

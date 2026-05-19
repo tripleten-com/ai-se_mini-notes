@@ -55,7 +55,7 @@ const noteSchema = new Schema<NoteDocument>(
     },
     visibility: {
       type: String,
-      enum: NOTE_VISIBILITIES,
+      // TODO: Chapter 2 Lesson 7 - align the schema constraint with the shared visibility type.
       default: "team",
       required: true
     },

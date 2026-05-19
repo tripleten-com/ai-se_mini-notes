@@ -1,12 +1,13 @@
 import type { Note } from "../../../shared/types";
 import CommentList from "./CommentList";
 
-type NoteCardProps = {
+// TODO: Chapter 2 Lesson 1 - apply this prop contract to the component parameter.
+export type NoteCardProps = {
   note: Note;
   onArchive?: (noteId: string) => void;
 };
 
-function NoteCard({ note, onArchive }: NoteCardProps) {
+function NoteCard({ note, onArchive }: any) {
   return (
     <article className="note-card">
       <div className="note-card__meta">

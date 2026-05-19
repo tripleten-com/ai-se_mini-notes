@@ -2,8 +2,9 @@ import type { Request, Response } from "express";
 import type { ApiResponse, CreateNotePayload, Note } from "../../../shared/types";
 import * as noteService from "../services/noteService";
 
-type CreateNoteRequest = Request<Record<string, never>, ApiResponse<Note>, CreateNotePayload>;
-type UpdateNoteRequest = Request<{ noteId: string }>;
+// TODO: Chapter 2 Lesson 6 - strengthen these route contracts with params, body, and response types.
+type CreateNoteRequest = Request;
+type UpdateNoteRequest = Request;
 
 export async function getNotes(_req: Request, res: Response) {
   const notes = await noteService.listNotes();

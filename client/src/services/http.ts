@@ -5,10 +5,12 @@ export const http = axios.create({
   baseURL: "/api"
 });
 
-export function unwrapResponse<T>(response: ApiResponse<T>): T {
+// TODO: Chapter 2 Lesson 4 - preserve the response data type with a generic return value.
+export function unwrapResponse(response: ApiResponse<any>): any {
   return response.data;
 }
 
-export function unwrapPaginated<T>(response: ApiResponse<Paginated<T>>) {
+// TODO: Chapter 2 Lesson 8 - preserve paginated item types instead of returning any.
+export function unwrapPaginated(response: ApiResponse<Paginated<any>>) {
   return response.data;
 }

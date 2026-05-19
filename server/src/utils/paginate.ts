@@ -5,11 +5,12 @@ type PaginateOptions = {
   pageSize?: number;
 };
 
-export function paginate<T>(
-  items: T[],
+// TODO: Chapter 2 Lesson 8 - make this helper preserve the item type from input to output.
+export function paginate(
+  items: any[],
   total: number,
   options: PaginateOptions = {}
-): Paginated<T> {
+): Paginated<any> {
   return {
     items,
     total,

@@ -7,9 +7,10 @@ import { archiveNote, createNote, listNotes } from "../services/noteService";
 
 function NotesPage() {
   const { currentUser, lastActionRef } = useAuth();
-  const [notes, setNotes] = useState<Note[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  // TODO: Chapter 2 Lesson 2 - tighten these hook types instead of relying on broad values.
+  const [notes, setNotes] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null as any);
 
   const activeNotes = useMemo(
     () => notes.filter((note) => !note.archived),

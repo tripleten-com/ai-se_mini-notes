@@ -23,7 +23,8 @@ type AuthProviderProps = {
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [token, setToken] = useState<string>("demo-token");
-  const lastActionRef = useRef<string | null>(null);
+  // TODO: Chapter 2 Lesson 2 - give this ref an explicit string-or-null type.
+  const lastActionRef = useRef(null);
 
   const value = useMemo<AuthContextValue>(
     () => ({
