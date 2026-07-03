@@ -19,7 +19,7 @@ export type Note = {
   id: string;
   title: string;
   body: string;
-  visibility: NoteVisibility;
+  visibility: string;
   ownerId: string;
   tags: string[];
   comments: NoteComment[];
