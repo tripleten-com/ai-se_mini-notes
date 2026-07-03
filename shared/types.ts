@@ -29,18 +29,12 @@ export type Note = {
   updatedAt: string;
 };
 
-export type CreateNotePayload = {
-  title: string;
-  body: string;
-  visibility: NoteVisibility;
-  tags: string[];
-};
+export type CreateNotePayload = Pick<
+  Note,
+  "title" | "body" | "visibility" | "tags"
+>;
 
-export type UpdateNotePayload = {
-  title?: string;
-  body?: string;
-  visibility?: NoteVisibility;
-  tags?: string[];
+export type UpdateNotePayload = Partial<CreateNotePayload> & {
   archived?: boolean;
   pinned?: boolean;
 };
