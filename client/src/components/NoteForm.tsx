@@ -13,24 +13,24 @@ const initialFormState: NoteFormState = {
   title: "",
   body: "",
   visibility: "team",
-  tags: []
+  tags: [],
 };
 
 function NoteForm({ onSubmit }: NoteFormProps) {
   const [form, setForm] = useState<NoteFormState>(initialFormState);
   const [error, setError] = useState<string | null>(null);
 
-  // TODO: Chapter 2 Lesson 3 - replace broad event typing with the correct React event type.
+  // TODO: Chapter 2 Lesson 2 - replace broad event typing with the correct React event type.
   function handleTextChange(event: any) {
     const { name, value } = event.target;
 
     setForm((current) => ({
       ...current,
-      [name]: value
+      [name]: value,
     }));
   }
 
-  // TODO: Chapter 2 Lesson 3 - type this input event without using any.
+  // TODO: Chapter 2 Lesson 2 - type this input event without using any.
   function handleTagsChange(event: any) {
     const tags = event.target.value
       .split(",")
@@ -39,18 +39,18 @@ function NoteForm({ onSubmit }: NoteFormProps) {
 
     setForm((current) => ({
       ...current,
-      tags
+      tags,
     }));
   }
 
   function handleVisibilityChange(visibility: NoteVisibility) {
     setForm((current) => ({
       ...current,
-      visibility
+      visibility,
     }));
   }
 
-  // TODO: Chapter 2 Lesson 3 - type this form event without using any.
+  // TODO: Chapter 2 Lesson 2 - type this form event without using any.
   async function handleSubmit(event: any) {
     event.preventDefault();
 
@@ -63,7 +63,7 @@ function NoteForm({ onSubmit }: NoteFormProps) {
     await onSubmit({
       ...form,
       title: form.title.trim(),
-      body: form.body.trim()
+      body: form.body.trim(),
     });
     setForm(initialFormState);
   }

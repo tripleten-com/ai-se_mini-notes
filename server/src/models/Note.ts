@@ -19,25 +19,25 @@ const commentSchema = new Schema<NoteComment>(
   {
     id: {
       type: String,
-      required: true
+      required: true,
     },
     body: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     authorId: {
       type: String,
-      required: true
+      required: true,
     },
     createdAt: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   {
-    _id: false
-  }
+    _id: false,
+  },
 );
 
 const noteSchema = new Schema<NoteDocument>(
@@ -46,44 +46,43 @@ const noteSchema = new Schema<NoteDocument>(
       type: String,
       required: true,
       trim: true,
-      minlength: 3
+      minlength: 3,
     },
     body: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     visibility: {
       type: String,
-      // TODO: Chapter 2 Lesson 7 - align the schema constraint with the shared visibility type.
       default: "team",
-      required: true
+      required: true,
     },
     ownerId: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      required: true
+      required: true,
     },
     tags: {
       type: [String],
-      default: []
+      default: [],
     },
     comments: {
       type: [commentSchema],
-      default: []
+      default: [],
     },
     archived: {
       type: Boolean,
-      default: false
+      default: false,
     },
     pinned: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   {
-    timestamps: true
-  }
+    timestamps: true,
+  },
 );
 
 export const NoteModel = model<NoteDocument>("Note", noteSchema);

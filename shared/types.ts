@@ -29,7 +29,6 @@ export type Note = {
   updatedAt: string;
 };
 
-// TODO: Chapter 2 Lesson 5 - derive this payload from Note instead of duplicating fields.
 export type CreateNotePayload = {
   title: string;
   body: string;
@@ -37,7 +36,6 @@ export type CreateNotePayload = {
   tags: string[];
 };
 
-// TODO: Chapter 2 Lesson 5 - derive update payloads from create payloads.
 export type UpdateNotePayload = {
   title?: string;
   body?: string;
