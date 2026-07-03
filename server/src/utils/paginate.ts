@@ -5,11 +5,11 @@ type PaginateOptions = {
   pageSize?: number;
 };
 
-export function paginate<T>(
-  items: T[],
+export function paginate(
+  items: any[],
   total: number,
   options: PaginateOptions = {}
-): Paginated<T> {
+) {
   return {
     items,
     total,

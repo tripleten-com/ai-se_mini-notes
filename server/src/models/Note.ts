@@ -55,7 +55,6 @@ const noteSchema = new Schema<NoteDocument>(
     },
     visibility: {
       type: String,
-      enum: NOTE_VISIBILITIES,
       default: "team",
       required: true
     },
