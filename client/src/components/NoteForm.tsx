@@ -80,7 +80,7 @@ function NoteForm({ onSubmit }: NoteFormProps) {
       <label>
         Visibility
         <VisibilitySelect
-          value={form.visibility}
+          value={form.visibility as NoteVisibility}
           onChange={handleVisibilityChange}
         />
       </label>
