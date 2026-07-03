@@ -19,30 +19,25 @@ const commentSchema = new Schema<NoteComment>(
   {
     id: {
       type: String,
-      required: true
+      required: true,
     },
     body: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     authorId: {
       type: String,
-      required: true
+      required: true,
     },
     createdAt: {
       type: String,
-      required: true
+      required: true,
     },
-    resolved: {
-      // TODO: Chapter 3 Lesson 6 - align this nested schema field with the shared comment type.
-      type: String,
-      default: "false"
-    }
   },
   {
-    _id: false
-  }
+    _id: false,
+  },
 );
 
 const noteSchema = new Schema<NoteDocument>(
@@ -51,45 +46,44 @@ const noteSchema = new Schema<NoteDocument>(
       type: String,
       required: true,
       trim: true,
-      minlength: 3
+      minlength: 3,
     },
     body: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     visibility: {
       type: String,
       // TODO: Chapter 3 Lesson 4 - align the schema enum with shared constrained values.
       default: "team",
-      required: true
+      required: true,
     },
     ownerId: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      required: true
+      required: true,
     },
     tags: {
       type: [String],
-      default: []
+      default: [],
     },
     comments: {
       type: [commentSchema],
-      default: []
+      default: [],
     },
     archived: {
       type: Boolean,
-      default: false
+      default: false,
     },
     pinned: {
-      // TODO: Chapter 3 Lesson 8 - keep this feature field compatible with existing records.
-      type: String,
-      default: "false"
-    }
+      type: Boolean,
+      default: false,
+    },
   },
   {
-    timestamps: true
-  }
+    timestamps: true,
+  },
 );
 
 export const NoteModel = model<NoteDocument>("Note", noteSchema);

@@ -12,9 +12,7 @@ export type NoteComment = {
   id: string;
   body: string;
   authorId: string;
-  // TODO: Chapter 3 Lesson 6 - extend this nested object safely without changing unrelated fields.
   createdAt: string;
-  resolved?: boolean;
 };
 
 export type Note = {
@@ -27,7 +25,6 @@ export type Note = {
   tags: string[];
   comments: NoteComment[];
   archived: boolean;
-  // TODO: Chapter 3 Lesson 8 - decide whether pinned belongs in the model and keep it compatible.
   pinned?: boolean;
   createdAt: string;
   updatedAt: string;

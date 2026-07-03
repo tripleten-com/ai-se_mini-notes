@@ -80,6 +80,7 @@ function NoteForm({ onSubmit }: NoteFormProps) {
       <label>
         Visibility
         <VisibilitySelect
+          // TODO: Chapter 3 Lesson 4 - remove this dangerous cast once the shared type is fixed.
           value={form.visibility as NoteVisibility}
           onChange={handleVisibilityChange}
         />
