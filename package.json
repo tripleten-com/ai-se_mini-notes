@@ -2,6 +2,7 @@
   "name": "mini-notes",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "workspaces": [
     "client",
     "server"
@@ -11,6 +12,15 @@
     "dev:server": "npm run dev --workspace server",
     "typecheck": "npm run typecheck --workspace client && npm run typecheck --workspace server",
     "build": "npm run build --workspace server && npm run build --workspace client",
-    "seed": "npm run seed --workspace server"
+    "seed": "npm run seed --workspace server",
+    "test:l1": "node tests/lesson-01.js",
+    "test:l2": "node tests/lesson-02.js",
+    "test:l3": "node tests/lesson-03.js",
+    "test:l4": "node tests/lesson-04.js",
+    "test:l5": "node tests/lesson-05.js"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.29.0",
+    "esquery": "^1.6.0"
   }
 }
