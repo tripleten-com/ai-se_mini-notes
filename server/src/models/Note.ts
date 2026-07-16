@@ -1,6 +1,6 @@
 import { Schema, model, Types } from "mongoose";
 import { NOTE_VISIBILITIES } from "../../../shared/types";
-import type { NoteComment, NoteVisibility } from "../../../shared/types";
+import type { NoteVisibility } from "../../../shared/types";
 
 export type NoteDocument = {
   title: string;
@@ -8,37 +8,11 @@ export type NoteDocument = {
   visibility: NoteVisibility;
   ownerId: Types.ObjectId;
   tags: string[];
-  comments: NoteComment[];
   archived: boolean;
   pinned?: boolean;
   createdAt: Date;
   updatedAt: Date;
 };
-
-const commentSchema = new Schema<NoteComment>(
-  {
-    id: {
-      type: String,
-      required: true,
-    },
-    body: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    authorId: {
-      type: String,
-      required: true,
-    },
-    createdAt: {
-      type: String,
-      required: true,
-    },
-  },
-  {
-    _id: false,
-  },
-);
 
 const noteSchema = new Schema<NoteDocument>(
   {
@@ -66,10 +40,6 @@ const noteSchema = new Schema<NoteDocument>(
     },
     tags: {
       type: [String],
-      default: [],
-    },
-    comments: {
-      type: [commentSchema],
       default: [],
     },
     archived: {

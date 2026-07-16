@@ -22,14 +22,6 @@ async function seed() {
       visibility: "team",
       ownerId: user._id,
       tags: ["typescript", "contracts"],
-      comments: [
-        {
-          id: "comment-1",
-          body: "Check mapper output before changing the UI.",
-          authorId: user._id.toString(),
-          createdAt: new Date().toISOString(),
-        }
-      ],
       archived: false,
       pinned: true
     },
@@ -39,7 +31,6 @@ async function seed() {
       visibility: "private",
       ownerId: user._id,
       tags: ["validation"],
-      comments: [],
       archived: false
     }
   ]);
