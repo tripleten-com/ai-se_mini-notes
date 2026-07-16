@@ -13,7 +13,6 @@ function NoteCard({ note, onArchive }: NoteCardProps) {
       </div>
       <h2>{note.title}</h2>
       <p>{note.body}</p>
-      {note.pinned && <strong>Pinned</strong>}
       {onArchive && !note.archived && (
         <button type="button" onClick={() => onArchive(note.id)}>
           Archive

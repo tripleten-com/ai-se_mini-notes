@@ -12,7 +12,6 @@ export function mapNote(document: HydratedDocument<NoteDocument>): Note {
     ownerId: document.ownerId.toString(),
     tags: document.tags,
     archived: document.archived,
-    pinned: document.pinned,
     // TODO: Chapter 3 Lesson 5 - expose dates in the shared API format intentionally.
     createdAt: String(document.createdAt),
     updatedAt: document.updatedAt.toISOString(),
