@@ -10,7 +10,6 @@ export function mapNote(document: HydratedDocument<NoteDocument>): Note {
     visibility: document.visibility,
     ownerId: document.ownerId.toString(),
     tags: document.tags,
-    comments: document.comments,
     archived: document.archived,
     pinned: document.pinned,
     createdAt: document.createdAt.toISOString(),

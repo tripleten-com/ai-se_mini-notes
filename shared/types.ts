@@ -8,13 +8,6 @@ export type User = {
   email: string;
 };
 
-export type NoteComment = {
-  id: string;
-  body: string;
-  authorId: string;
-  createdAt: string;
-};
-
 export type Note = {
   id: string;
   title: string;
@@ -22,7 +15,6 @@ export type Note = {
   visibility: string;
   ownerId: string;
   tags: string[];
-  comments: NoteComment[];
   archived: boolean;
   pinned?: boolean;
   createdAt: string;
