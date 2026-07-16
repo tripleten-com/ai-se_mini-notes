@@ -22,8 +22,7 @@ async function seed() {
       visibility: "team",
       ownerId: user._id,
       tags: ["typescript", "contracts"],
-      archived: false,
-      pinned: true
+      archived: false
     },
     {
       title: "Validation boundary",
