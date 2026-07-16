@@ -1,5 +1,4 @@
 import type { Note } from "../../../shared/types";
-import CommentList from "./CommentList";
 
 type NoteCardProps = {
   note: Note;
@@ -15,7 +14,6 @@ function NoteCard({ note, onArchive }: NoteCardProps) {
       <h2>{note.title}</h2>
       <p>{note.body}</p>
       {note.pinned && <strong>Pinned</strong>}
-      <CommentList comments={note.comments} />
       {onArchive && !note.archived && (
         <button type="button" onClick={() => onArchive(note.id)}>
           Archive
