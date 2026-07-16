@@ -16,7 +16,6 @@ export type Note = {
   ownerId: string;
   tags: string[];
   archived: boolean;
-  pinned?: boolean;
   createdAt: string;
   updatedAt: string;
 };
@@ -28,7 +27,6 @@ export type CreateNotePayload = Pick<
 
 export type UpdateNotePayload = Partial<CreateNotePayload> & {
   archived?: boolean;
-  pinned?: boolean;
 };
 
 export type ApiResponse<T> = {
