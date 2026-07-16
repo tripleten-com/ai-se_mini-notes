@@ -38,8 +38,7 @@ select {
   background: #ffffff;
 }
 
-.note-card__meta,
-.comment-list {
+.note-card__meta {
   color: #5b6472;
   font-size: 14px;
 }

@@ -1,5 +1,4 @@
 import type { Note } from "../../../shared/types";
-import CommentList from "./CommentList";
 
 // TODO: Chapter 2 Lesson 1 - apply this prop contract to the component parameter.
 export type NoteCardProps = {
@@ -16,7 +15,6 @@ function NoteCard({ note, onArchive }: any) {
       <h2>{note.title}</h2>
       <p>{note.body}</p>
       {note.pinned && <strong>Pinned</strong>}
-      <CommentList comments={note.comments} />
       {onArchive && !note.archived && (
         <button type="button" onClick={() => onArchive(note.id)}>
           Archive
