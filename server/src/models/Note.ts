@@ -9,7 +9,6 @@ export type NoteDocument = {
   ownerId: Types.ObjectId;
   tags: string[];
   archived: boolean;
-  pinned?: boolean;
   createdAt: Date;
   updatedAt: Date;
 };
@@ -42,10 +41,6 @@ const noteSchema = new Schema<NoteDocument>(
       default: [],
     },
     archived: {
-      type: Boolean,
-      default: false,
-    },
-    pinned: {
       type: Boolean,
       default: false,
     },

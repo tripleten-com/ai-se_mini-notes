@@ -11,7 +11,6 @@ export function mapNote(document: HydratedDocument<NoteDocument>): Note {
     ownerId: document.ownerId.toString(),
     tags: document.tags,
     archived: document.archived,
-    pinned: document.pinned,
     createdAt: document.createdAt.toISOString(),
     updatedAt: document.updatedAt.toISOString()
   };
