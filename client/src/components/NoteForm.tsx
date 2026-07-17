@@ -13,7 +13,7 @@ const initialFormState: NoteFormState = {
   title: "",
   body: "",
   visibility: "team",
-  tags: []
+  tags: [],
 };
 
 function NoteForm({ onSubmit }: NoteFormProps) {
@@ -21,13 +21,13 @@ function NoteForm({ onSubmit }: NoteFormProps) {
   const [error, setError] = useState<string | null>(null);
 
   function handleTextChange(
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
     const { name, value } = event.target;
 
     setForm((current) => ({
       ...current,
-      [name]: value
+      [name]: value,
     }));
   }
 
@@ -39,14 +39,14 @@ function NoteForm({ onSubmit }: NoteFormProps) {
 
     setForm((current) => ({
       ...current,
-      tags
+      tags,
     }));
   }
 
   function handleVisibilityChange(visibility: NoteVisibility) {
     setForm((current) => ({
       ...current,
-      visibility
+      visibility,
     }));
   }
 
@@ -62,7 +62,7 @@ function NoteForm({ onSubmit }: NoteFormProps) {
     await onSubmit({
       ...form,
       title: form.title.trim(),
-      body: form.body.trim()
+      body: form.body.trim(),
     });
     setForm(initialFormState);
   }
