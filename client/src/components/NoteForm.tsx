@@ -71,11 +71,21 @@ function NoteForm({ onSubmit }: NoteFormProps) {
     <form className="note-form" onSubmit={handleSubmit}>
       <label>
         Title
-        <input name="title" value={form.title} onChange={handleTextChange} />
+        <input
+          name="title"
+          value={form.title}
+          onChange={handleTextChange}
+          placeholder="Enter title..."
+        />
       </label>
       <label>
         Body
-        <textarea name="body" value={form.body} onChange={handleTextChange} />
+        <textarea
+          placeholder="Enter note body..."
+          name="body"
+          value={form.body}
+          onChange={handleTextChange}
+        />
       </label>
       <label>
         Visibility
@@ -86,7 +96,11 @@ function NoteForm({ onSubmit }: NoteFormProps) {
       </label>
       <label>
         Tags
-        <input value={form.tags.join(", ")} onChange={handleTagsChange} />
+        <input
+          value={form.tags.join(", ")}
+          onChange={handleTagsChange}
+          placeholder="e.g. typescript, contracts"
+        />
       </label>
       {error && <p role="alert">{error}</p>}
       <button type="submit">Create note</button>
