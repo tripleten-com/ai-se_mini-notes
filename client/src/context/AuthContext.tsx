@@ -12,7 +12,7 @@ type AuthContextValue = {
 const demoUser: User = {
   id: "user-1",
   name: "Avery Stone",
-  email: "avery@example.com"
+  email: "avery@example.com",
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -30,9 +30,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
       currentUser: demoUser,
       token,
       setToken,
-      lastActionRef
+      lastActionRef,
     }),
-    [token]
+    [token],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
