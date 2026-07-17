@@ -13,7 +13,7 @@ function NotesPage() {
 
   const activeNotes = useMemo(
     () => notes.filter((note) => !note.archived),
-    [notes]
+    [notes],
   );
 
   async function loadNotes() {
@@ -39,7 +39,7 @@ function NotesPage() {
   async function handleArchiveNote(noteId: string) {
     const updated = await archiveNote(noteId);
     setNotes((current) =>
-      current.map((note) => (note.id === updated.id ? updated : note))
+      current.map((note) => (note.id === updated.id ? updated : note)),
     );
     lastActionRef.current = `archived:${updated.id}`;
   }
@@ -60,11 +60,7 @@ function NotesPage() {
       )}
       <section className="note-grid" aria-label="Active notes">
         {activeNotes.map((note) => (
-          <NoteCard
-            key={note.id}
-            note={note}
-            onArchive={handleArchiveNote}
-          />
+          <NoteCard key={note.id} note={note} onArchive={handleArchiveNote} />
         ))}
       </section>
     </main>
