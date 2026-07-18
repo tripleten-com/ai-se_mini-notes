@@ -1,10 +1,6 @@
 import type { Note } from "../../../shared/types";
 
-// TODO: Chapter 2 Lesson 1 - apply this prop contract to the component parameter.
-export type NoteCardProps = {
-  note: Note;
-  onArchive?: (noteId: string) => void;
-};
+// TODO: Chapter 2 Lesson 1 - Create a NoteCardProps type and apply it to the component parameter.
 
 function NoteCard({ note, onArchive }: any) {
   return (
